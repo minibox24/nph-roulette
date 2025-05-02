@@ -147,7 +147,7 @@ function UserCard({ idx, article }: { idx: number; article: BoardArticle }) {
       <div
         className="absolute -z-10 size-56 scale-150 rounded-md opacity-70"
         style={{
-          backgroundColor: `${COLORS[tierIndex]}`,
+          background: `${COLORS[tierIndex]}`,
         }}
       />
 
@@ -156,7 +156,152 @@ function UserCard({ idx, article }: { idx: number; article: BoardArticle }) {
         className="size-36 rounded-md object-contain"
       />
 
-      {/* 넘어가면 ... */}
+      {/* 마카게 효과 */}
+      {tierIndex === 11 && (
+        <>
+          <motion.div
+            className="absolute"
+            style={{
+              width: 500,
+              height: 80,
+              background: "white",
+              opacity: 0.2,
+              zIndex: -1,
+            }}
+            initial={{ rotate: -45 }}
+            animate={{ x: [-300, 300], y: [-300, 300] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 2,
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute"
+            style={{
+              background: "url(/effect.webp) no-repeat 0 -84px",
+              width: 131,
+              height: 162,
+              transform: "scale(0.2)",
+              top: -30,
+              left: -25,
+            }}
+            initial={{
+              scale: 0.2,
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              delay: 0.08,
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute"
+            style={{
+              background: "url(/effect.webp) no-repeat -191px -119px",
+              width: 77,
+              height: 77,
+              transform: "scale(0.2)",
+              top: -10,
+              left: 25,
+            }}
+            initial={{
+              scale: 0.2,
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute"
+            style={{
+              background: "url(/effect.webp) no-repeat -313px -6px",
+              width: 40,
+              height: 40,
+              top: 0,
+              left: 70,
+            }}
+            initial={{
+              scale: 0.2,
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              delay: 0.05,
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute"
+            style={{
+              background: "url(/effect.webp) no-repeat -981px -48px",
+              width: 53,
+              height: 53,
+              top: 0,
+              right: 30,
+            }}
+            initial={{
+              scale: 0.2,
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              delay: 0.1,
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute"
+            style={{
+              background: "url(/effect.webp) no-repeat -1067px 0",
+              width: 237,
+              height: 293,
+              transform: "scale(0.1)",
+              top: -90,
+              right: -80,
+            }}
+            initial={{
+              scale: 0.1,
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          />
+        </>
+      )}
+
       <div className="w-52 overflow-hidden text-lg text-ellipsis whitespace-nowrap">
         <b>{article.writerInfo.nickName}</b>
         <p className="-mt-1 text-sm opacity-70">({getNickname(article)})</p>
