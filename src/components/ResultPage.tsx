@@ -82,6 +82,9 @@ export default function ResultPage({ result }: ResultPageProps) {
             src="/effect.webm"
             autoPlay
             className="absolute inset-0 h-full w-full object-cover"
+            onLoadStart={(e) => {
+              e.currentTarget.volume = 0.6;
+            }}
           />
         </motion.div>
       )}
